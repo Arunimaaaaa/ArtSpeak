@@ -100,7 +100,7 @@ class _ChildDetailsScreenState extends State<ChildDetailsScreen> {
                     decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(26),
-                      boxShadow: [BoxShadow(color: Colors.black.withOpacity(0.06), blurRadius: 24, offset: const Offset(0, 12))],
+                      boxShadow: [BoxShadow(color: Colors.black.withValues(alpha: 0.06), blurRadius: 24, offset: const Offset(0, 12))],
                     ),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -151,7 +151,7 @@ class _ChildDetailsScreenState extends State<ChildDetailsScreen> {
                         _field(
                           label: 'Gender *',
                           child: DropdownButtonFormField<ChildGender>(
-                            value: _gender,
+                            initialValue: _gender,
                             decoration: const InputDecoration(hintText: 'Select gender'),
                             items: ChildGender.values
                                 .map((g) => DropdownMenuItem(value: g, child: Text(g.label)))
@@ -164,7 +164,7 @@ class _ChildDetailsScreenState extends State<ChildDetailsScreen> {
                         _field(
                           label: 'Condition / Diagnosis',
                           child: DropdownButtonFormField<String>(
-                            value: _condition,
+                            initialValue: _condition,
                             decoration: const InputDecoration(hintText: 'Select condition'),
                             items: _conditions
                                 .map((c) => DropdownMenuItem(value: c, child: Text(c)))
@@ -207,7 +207,7 @@ class _ChildDetailsScreenState extends State<ChildDetailsScreen> {
                         _field(
                           label: 'Is a Therapist Needed? *',
                           child: DropdownButtonFormField<bool>(
-                            value: _therapistNeeded,
+                            initialValue: _therapistNeeded,
                             decoration: const InputDecoration(hintText: 'Select an option'),
                             items: const [
                               DropdownMenuItem(value: true, child: Text('Yes')),

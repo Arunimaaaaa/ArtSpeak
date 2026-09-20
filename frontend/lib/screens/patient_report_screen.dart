@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -63,7 +61,7 @@ class _ProfileHeader extends StatelessWidget {
         children: [
           CircleAvatar(
             radius: 26,
-            backgroundColor: Colors.white.withOpacity(0.2),
+            backgroundColor: Colors.white.withValues(alpha: 0.2),
             child: Text(profile.name[0], style: GoogleFonts.fredoka(color: Colors.white, fontWeight: FontWeight.w700, fontSize: 20)),
           ),
           const SizedBox(width: 16),
@@ -208,34 +206,13 @@ class _ReportCard extends StatelessWidget {
                   style: GoogleFonts.fredoka(fontWeight: FontWeight.w700, color: AppColors.primaryDark)),
               Container(
                 padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
-                decoration: BoxDecoration(color: session.mood.color.withOpacity(0.12), borderRadius: BorderRadius.circular(20)),
+                decoration: BoxDecoration(color: session.mood.color.withValues(alpha: 0.12), borderRadius: BorderRadius.circular(20)),
                 child: Text(session.mood.label, style: GoogleFonts.fredoka(color: session.mood.color, fontWeight: FontWeight.w700, fontSize: 12)),
               ),
             ],
           ),
           const SizedBox(height: 10),
           Text(session.caregiverSummary, style: GoogleFonts.nunito(height: 1.4, fontSize: 13.5)),
-          if (session.artworkBase64 != null) ...[
-            const SizedBox(height: 14),
-            ClipRRect(
-              borderRadius: BorderRadius.circular(12),
-              child: Image.memory(
-                base64Decode(session.artworkBase64!),
-                width: double.infinity,
-                height: 200,
-                fit: BoxFit.cover,
-              ),
-            ),
-            const SizedBox(height: 6),
-            Text(
-              'AI-generated therapeutic artwork · based on session emotion state',
-              style: GoogleFonts.nunito(
-                fontSize: 10.5,
-                color: AppColors.textMuted,
-                fontStyle: FontStyle.italic,
-              ),
-            ),
-          ],
           const SizedBox(height: 10),
           Text(
             'V ${session.valence}  ·  A ${session.arousal}  ·  D ${session.dominance}  ·  ${session.strokeCount} strokes',

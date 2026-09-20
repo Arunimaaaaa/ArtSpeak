@@ -1,0 +1,17 @@
+{
+  "model_architecture": "HistGradientBoosting",
+  "n_samples": 12990,
+  "n_features": 116,
+  "n_subjects": 29,
+  "validation_strategy": "5-Fold Subject StratifiedGroupKFold",
+  "oof_accuracy": 0.9986913010007699,
+  "oof_balanced_accuracy": 0.996784375977837,
+  "oof_precision": 0.9936440677966102,
+  "oof_recall": 0.9943462897526502,
+  "oof_f1_score": 0.9939950547509714,
+  "oof_roc_auc": 0.9999792107090797,
+  "train_roc_auc": 0.9999998869331762,
+  "val_roc_auc": 0.9999833980282784,
+  "train_val_gap": 1.6488904897804524e-05,
+  "overfitting_status": "Passed (Gap < 0.10)"
+}

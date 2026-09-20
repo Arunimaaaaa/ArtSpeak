@@ -1,0 +1,15 @@
+[
+  "avg_pressure",
+  "avg_speed_px_s",
+  "avg_curvature",
+  "avg_pressure_variance",
+  "avg_tap_interval_ms",
+  "avg_tap_regularity",
+  "stereotypy_burst_present",
+  "tap_cadence_hz",
+  "kinetic_touch_intensity",
+  "rhythm_stability_index",
+  "motor_fluidity_score",
+  "dysregulation_ratio",
+  "pressure_velocity_ratio"
+]
